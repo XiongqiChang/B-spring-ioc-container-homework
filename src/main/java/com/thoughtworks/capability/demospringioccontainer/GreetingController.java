@@ -9,13 +9,21 @@ public class GreetingController {
 
     private final GreetingService greetingService;
 
-    @Autowired
     public GreetingController(GreetingService greetingService) {
         this.greetingService = greetingService;
     }
 
+
+
+
+    /*  @Lookup
+    public GreetingService getGreetingService() {
+        return null;
+    }*/
+
     @GetMapping("/greet")
     public String greet() {
+
         return greetingService.sayHi();
     }
 
